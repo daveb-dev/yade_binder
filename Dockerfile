@@ -63,6 +63,8 @@ RUN apt-get clean && apt-get update && \
     python3-tk \
     python3-xlib \
     python3-mpi4py \
+    python3-pip \
+    python3-dev \
     texlive-fonts-recommended \
     texlive-generic-extra \
     texlive-latex-extra \
@@ -82,8 +84,6 @@ RUN apt-get autoclean && \
     rm -rf /var/cache/apt/archives/*deb
 
 
-
-RUN pip3 install --upgrade setuptools pip
 RUN pip3 install --no-cache --upgrade notebook
 
 
@@ -95,5 +95,6 @@ ENV HOME /home/${NB_USER}
 RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
-    ${NB_USER}ù
+    ${NB_USER}
 WORKDIR ${HOME}
+USER ${USER} 
