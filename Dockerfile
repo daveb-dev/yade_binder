@@ -72,7 +72,7 @@ RUN apt-get clean && apt-get update && \
     tipa \
     xvfb \
     zlib1g-dev
-RUN bash -c 'echo "deb http://www.yade-dem.org/packages/ bionic main" >> /etc/apt/sources.list' && \
+RUN  wget -O - http://www.yade-dem.org/packages/yadedev_pub.gpg | sudo apt-key add - && \
     apt-get update && \
     apt-get install -y yade 
 
