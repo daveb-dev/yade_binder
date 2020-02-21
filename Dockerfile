@@ -73,7 +73,9 @@ RUN apt-get clean && apt-get update && \
     xvfb \
     zlib1g-dev
 RUN bash -c 'echo "deb http://www.yade-dem.org/packages/ bionic main" >> /etc/apt/sources.list' && \
-    apt-get install yade 
+    apt-get update && \
+    apt-get install -y yade 
+
 RUN apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* && \
