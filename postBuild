@@ -1,9 +1,4 @@
 #!/bin/bash
-git clone https://gitlab.com/yade-dev/trunk.git  myYade && \
-cd myYade && \
-mkdir build && mkdir install \
-cd build && \
-cmake -DCMAKE_INSTALL_PREFIX=./../inst -DSUFFIX=-trunk .. && \
-make && \
-make install 
+#cd myYade && \
+# set PYTHONPATH
 
