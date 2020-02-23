@@ -73,9 +73,6 @@ RUN apt-get clean && apt-get update && \
     tipa \
     xvfb \
     zlib1g-dev
-RUN  wget -O - http://www.yade-dem.org/packages/yadedev_pub.gpg | sudo apt-key add - && \
-    apt-get update && \
-    apt-get install -y yade 
 
 RUN apt-get autoclean && \
     apt-get autoremove && \
