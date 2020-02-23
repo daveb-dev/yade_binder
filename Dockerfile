@@ -79,6 +79,13 @@ RUN apt-get autoclean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /var/cache/apt/archives/*deb
 
+RUN git clone https://gitlab.com/yade-dev/trunk.git  myYade && \
+    cd myYade && \
+    mkdir build && mkdir install \
+    cd build && \
+    cmake -DCMAKE_INSTALL_PREFIX=./../inst -DSUFFIX=-trunk .. && \
+    make && \
+    make install 
 
 RUN pip3 install --no-cache --upgrade notebook
 
